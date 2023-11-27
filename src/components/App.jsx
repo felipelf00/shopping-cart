@@ -1,10 +1,11 @@
 import "./App.css";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link, Routes, Route, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import Router from "../Router";
 import Home from "./Home";
 import Shop from "./Shop";
+import Product from "./Product";
 
 function App() {
   const [products, setProducts] = useState();
@@ -23,9 +24,11 @@ function App() {
       <Link to="/">Home</Link>
       {/* <Router /> */}
       <Routes>
-        <Route path="/" element={<Home products={products} />} />
+        <Route path="*" element={<Home products={products} />} />
         <Route path="shop" element={<Shop products={products} />} />
+        <Route path="shop/:id" element={<Product products={products} />} />
       </Routes>
+      <Outlet />
     </>
   );
 }
