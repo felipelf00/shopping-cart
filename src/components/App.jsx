@@ -19,8 +19,22 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (product, quantity) => {
-    const newArray = [...cartItems, { product: product, quantity: quantity }];
-    setCartItems(newArray);
+    const existingProduct = cartItems.find(
+      (item) => item.product.id === product.id
+    );
+
+    if (existingProduct) {
+      const updatedCart = cartItems.map((item) =>
+        item.product.id === product.id
+          ? { ...item, quantity: item.quantity + quantity }
+          : item
+      );
+      setCartItems(updatedCart);
+    } else {
+      const newArray = [...cartItems, { product: product, quantity: quantity }];
+      setCartItems(newArray);
+    }
+
     console.log("cartItems");
     console.log(cartItems);
   };
@@ -37,10 +51,10 @@ function App() {
     <>
       <ShopContext.Provider value={{ products, cartItems, addToCart }}>
         <Header />
-        <h1>Hi, this is App</h1>
-        <Link to="/shop">Shop</Link>
+        {/* <h1>Hi, this is App</h1> */}
+        {/* <Link to="/shop">Shop</Link>
         <Link to="/">Home</Link>
-        <Link to="checkout">Checkout</Link>
+        <Link to="checkout">Checkout</Link> */}
         {/* <Router /> */}
         <Routes>
           <Route path="*" element={<Home />} />
