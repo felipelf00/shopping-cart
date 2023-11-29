@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
   return (
-    <div>
+    <div className="product-card">
       <Link to={`${product.id}`}>
         <img src={product.image} />
-        <div>{product.title}</div>
-        <div>R$ {product.price}</div>
       </Link>
+      <div className="card-text">
+        <div className="card-title">{product.title}</div>
+        <div>$ {product.price}</div>
+      </div>
     </div>
   );
 }

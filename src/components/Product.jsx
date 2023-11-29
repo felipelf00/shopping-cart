@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 
 function Product({ products }) {
-  console.log("products ");
-  console.log(products);
+  // console.log("products ");
+  // console.log(products);
   const { id } = useParams();
 
   if (!products) return <h4>loading...</h4>;

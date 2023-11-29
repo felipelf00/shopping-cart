@@ -14,6 +14,8 @@ function App() {
     fetch("https://fakestoreapi.com/products?limit=5")
       .then((response) => response.json())
       .then((json) => setProducts(json));
+
+    console.log("fetched data");
   }, []);
 
   return (
