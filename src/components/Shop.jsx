@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import { ShopContext } from "./App";
 
-function Shop({ products }) {
+function Shop() {
+  const { products } = useContext(ShopContext);
+
+  if (!products) return <p>Loading...</p>;
+
   return (
     <>
       <h1>Hi, this is Shop</h1>

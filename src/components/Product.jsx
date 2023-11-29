@@ -1,11 +1,13 @@
+import { useCallback, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { ShopContext } from "./App";
 
-function Product({ products }) {
-  // console.log("products ");
-  // console.log(products);
+//function Product({ products }) {
+function Product() {
   const { id } = useParams();
+  const { products } = useContext(ShopContext);
 
-  if (!products) return <h4>loading...</h4>;
+  if (!products) return <p>loading...</p>;
 
   const index = products.findIndex((product) => product.id === Number(id));
   console.log("index ");
