@@ -40,7 +40,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=5")
+    fetch("https://fakestoreapi.com/products?limit=8")
       .then((response) => response.json())
       .then((json) => setProducts(json));
 
@@ -51,17 +51,14 @@ function App() {
     <>
       <ShopContext.Provider value={{ products, cartItems, addToCart }}>
         <Header />
-        {/* <h1>Hi, this is App</h1> */}
-        {/* <Link to="/shop">Shop</Link>
-        <Link to="/">Home</Link>
-        <Link to="checkout">Checkout</Link> */}
-        {/* <Router /> */}
-        <Routes>
-          <Route path="*" element={<Home />} />
-          <Route path="shop" element={<Shop />} />
-          <Route path="shop/:id" element={<Product />} />
-          <Route path="checkout" element={<Checkout />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="*" element={<Home />} />
+            <Route path="shop" element={<Shop />} />
+            <Route path="shop/:id" element={<Product />} />
+            <Route path="checkout" element={<Checkout />} />
+          </Routes>
+        </main>
         {/* <Outlet /> */}
       </ShopContext.Provider>
     </>

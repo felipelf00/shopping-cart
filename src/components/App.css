@@ -3,6 +3,9 @@
 
 :root {
   --off-black: #343435;
+  --off-black-dark: #272727;
+  --red: #9b2020;
+  --red-dark: rgb(114, 24, 24);
 }
 
 .material-symbols-outlined {
@@ -11,8 +14,17 @@
 
 body {
   font-family: "Playfair Display", serif;
+  margin: 0;
+  padding: 0;
+  color: var(--off-black);
+  text-align: center;
+  position: relative;
+}
 
-  color: var(--off-black); /* Dark gray text color */
+main {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: auto;
 }
 
 ul {
@@ -22,6 +34,8 @@ ul {
 }
 
 header {
+  background-color: var(--off-black);
+  color: white;
   height: 50px;
   display: flex;
   align-items: center;
@@ -34,6 +48,7 @@ header {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
+  margin-left: 10px;
 }
 
 header ul {
@@ -47,13 +62,18 @@ header li {
   align-items: center;
 }
 
+header a {
+  color: white;
+}
+
 .cart-icons {
   position: relative;
   margin-right: 10px;
 }
 .cart-counter {
   color: white;
-  background-color: var(--off-black);
+  /* background-color: var(--off-black); */
+  background-color: var(--red);
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -69,16 +89,33 @@ a {
   color: var(--off-black);
 }
 
+/* test */
+nav ul li:not(:last-child) a {
+  font-weight: bold;
+  /* padding: 10px; */
+  /* margin: 0 10px; */
+  border-bottom: 3px solid transparent;
+  transition: border-bottom 0.22s ease-in-out, color 0.3s ease-in-out;
+}
+
+nav ul li:not(:last-child) a:hover {
+  /* color: #ffa500; */
+  /* border-bottom: 2px solid #ffa500; */
+  border-bottom: 3px solid var(--red);
+}
+/* end of test */
+
 .products-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   place-items: center;
+  padding-top: 20px;
 }
 
 .product-card {
   /* max-width: 40vw; */
-  width: min(40vw, 250px);
+  width: min(80vw, 250px);
   height: 250px;
   text-align: center;
   display: flex;
@@ -88,7 +125,13 @@ a {
   overflow: hidden;
   padding: 10px;
 
-  border: 1px solid black;
+  border: 1px solid var(--off-black);
+  transition: transform 0.12s ease-in-out;
+  box-shadow: 0 0 5px #e4e4e4;
+}
+
+.product-card:hover {
+  transform: scale(1.015);
 }
 
 .product-card img {
@@ -104,4 +147,137 @@ a {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+}
+
+.product-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 25px;
+}
+
+.product-wrapper .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+}
+
+.product-image {
+  /* width: min(80vw, 300px); */
+  height: 420px;
+  width: 420px;
+  object-fit: contain;
+}
+
+.product-description {
+  text-align: left;
+}
+
+.add-to-cart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-to-cart-wrapper input {
+  width: 42px;
+  padding: 9px;
+}
+
+/* button {
+  color: white;
+  padding: 8px;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+} */
+
+.btn-red {
+  background-color: var(--red);
+  color: white;
+  padding: 8px;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn-red:hover {
+  background-color: var(--red-dark);
+  cursor: pointer;
+}
+
+.btn-black:hover {
+  background-color: var(--off-black-dark);
+  cursor: pointer;
+}
+
+.btn-black {
+  background-color: var(--off-black);
+  color: white;
+  padding: 8px;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.popup-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: #34343560;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+.message-box {
+  background-color: white;
+  width: min(80vw, 420px);
+  height: 200px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  z-index: 10;
+  box-shadow: 0 0 18px #424242;
+}
+
+.message-box .popup-nav-wrapper a {
+  margin: 6px;
+}
+
+.message-box .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close {
+  width: 25px;
+  height: 25px;
+  padding: 0px;
+  /* border-radius: 50%; */
+}
+
+@media screen and (min-width: 900px) {
+  .product-wrapper {
+    flex-direction: row;
+  }
 }

@@ -10,7 +10,11 @@ function Shop() {
 
   return (
     <>
-      <h1>Hi, this is Shop</h1>
+      <h2>Elevate your style!</h2>
+      <p>
+        Browse through a variety of our high-quality products and find the
+        perfect item for every occasion.
+      </p>
       <div className="products-container">
         {products.map((product) => (
           <ProductCard product={product} key={product.id} />
