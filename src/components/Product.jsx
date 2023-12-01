@@ -34,7 +34,7 @@ function Product() {
     <div className="product-page">
       <h3>{thisProduct.title}</h3>
 
-      {showPopup && <Popup onClose={() => setShowPopup(false)}></Popup>}
+      {showPopup && <Popup type="add" onClose={() => setShowPopup(false)} />}
 
       <div className="product-wrapper">
         <img src={thisProduct.image} className="product-image" />

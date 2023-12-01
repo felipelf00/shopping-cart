@@ -12,6 +12,7 @@ export const ShopContext = createContext({
   products: [],
   cartItems: [],
   addToCart: () => {},
+  removeFromCart: () => {},
 });
 
 function App() {
@@ -34,9 +35,13 @@ function App() {
       const newArray = [...cartItems, { product: product, quantity: quantity }];
       setCartItems(newArray);
     }
+  };
 
-    console.log("cartItems");
-    console.log(cartItems);
+  const removeFromCart = (item) => {
+    const updatedCart = cartItems.filter(
+      (cartItem) => cartItem.product.id !== item.product.id
+    );
+    setCartItems(updatedCart);
   };
 
   useEffect(() => {
@@ -49,7 +54,9 @@ function App() {
 
   return (
     <>
-      <ShopContext.Provider value={{ products, cartItems, addToCart }}>
+      <ShopContext.Provider
+        value={{ products, cartItems, addToCart, removeFromCart }}
+      >
         <Header />
         <main>
           <Routes>

@@ -225,6 +225,14 @@ nav ul li:not(:last-child) a:hover {
   font-weight: 600;
 }
 
+.trash {
+  cursor: pointer;
+}
+
+.trash:hover {
+  color: var(--red);
+}
+
 .popup {
   position: fixed;
   top: 0;
@@ -257,10 +265,13 @@ nav ul li:not(:last-child) a:hover {
   justify-content: space-evenly;
   z-index: 10;
   box-shadow: 0 0 18px #424242;
+  padding: 18px;
 }
 
-.message-box .popup-nav-wrapper a {
+.message-box .popup-nav-wrapper a,
+.message-box .popup-nav-wrapper button {
   margin: 6px;
+  min-width: 70px;
 }
 
 .message-box .close {
@@ -274,6 +285,10 @@ nav ul li:not(:last-child) a:hover {
   height: 25px;
   padding: 0px;
   /* border-radius: 50%; */
+}
+
+.cart a:hover {
+  color: var(--red);
 }
 
 @media screen and (min-width: 900px) {
