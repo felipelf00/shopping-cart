@@ -66,6 +66,33 @@ header a {
   color: white;
 }
 
+.hero {
+  position: relative;
+}
+
+/* .hero-text {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  width: min(400px, 50vw);
+  padding: 18px;
+}
+
+.hero-text h1 {
+  font-size: 50px;
+}
+
+.hero-text p {
+  font-size: 20px;
+} */
+
+.home-text {
+  max-width: 700px;
+  margin: 60px auto;
+}
+
 .cart-icons {
   position: relative;
   margin-right: 10px;
@@ -231,6 +258,12 @@ nav ul li:not(:last-child) a:hover {
   margin: 0 8px;
 }
 
+.shop-now {
+  font-size: 1.7rem;
+  padding: 18px;
+  margin-bottom: 80px;
+}
+
 .trash {
   cursor: pointer;
 }
@@ -349,10 +382,52 @@ nav ul li:not(:last-child) a:hover {
   display: table-cell;
 }
 
+.slider-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  flex-shrink: 0;
+  flex-grow: 0;
+  transition: translate 0.3s ease-in-out;
+}
+
+.slider {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.slider button {
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 900;
+  padding: 1rem;
+  z-index: 6;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.slider button:hover {
+  background-color: rgba(255, 255, 255, 0.349);
+}
+
+.slider .prev {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.slider .next {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
 @media screen and (min-width: 900px) {
   .product-wrapper {
     flex-direction: row;
   }
 }
-
-/* GPT: */
