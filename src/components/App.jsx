@@ -7,6 +7,7 @@ import Home from "./Home";
 import Shop from "./Shop";
 import Product from "./Product";
 import Checkout from "./Checkout";
+import Thanks from "./Thanks";
 
 export const ShopContext = createContext({
   products: [],
@@ -64,6 +65,7 @@ function App() {
             <Route path="shop" element={<Shop />} />
             <Route path="shop/:id" element={<Product />} />
             <Route path="checkout" element={<Checkout />} />
+            <Route path="thanks" element={<Thanks />} />
           </Routes>
         </main>
         {/* <Outlet /> */}

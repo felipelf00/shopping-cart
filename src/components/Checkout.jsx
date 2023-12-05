@@ -15,7 +15,11 @@ function Checkout() {
 
   return (
     <>
-      <h3>Checkout</h3>
+      <h2>Checkout</h2>
+      <p>
+        Please take your time to review the items on your cart before
+        proceeding:
+      </p>
       {showPopup && (
         <Popup
           type="remove"
@@ -25,21 +29,44 @@ function Checkout() {
       )}
       {cartItems && (
         <div className="cart">
-          {cartItems.map((item) => (
-            <div key={item.product.id}>
-              <Link to={`../shop/${item.product.id}`}>
-                {item.product.title} - quantity: {item.quantity}
-              </Link>
-              <span
-                className="material-symbols-outlined trash"
-                onClick={() => handleRemoveItem(item)}
-              >
-                delete
-              </span>
-            </div>
-          ))}
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th> </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {cartItems.map((item) => (
+                <tr key={item.product.id}>
+                  <td>
+                    <Link to={`../shop/${item.product.id}`}>
+                      {item.product.title}
+                    </Link>
+                  </td>
+                  <td>{item.quantity}</td>
+                  <td>$ {item.quantity * item.product.price}</td>
+                  <td
+                    className="material-symbols-outlined trash"
+                    onClick={() => handleRemoveItem(item)}
+                  >
+                    delete
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
+      <Link className="btn-red" to="../shop">
+        Continue shopping
+      </Link>
+      <Link to={"../thanks"} className="btn-black">
+        Payment
+      </Link>
     </>
   );
 }
