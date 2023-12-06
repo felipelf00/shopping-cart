@@ -4,11 +4,11 @@ import ImageSlider from "./ImageSlider";
 import { Link } from "react-router-dom";
 
 const images = [
-  "../public/hr1.jpg",
-  "../public/hr2.jpg",
-  "../public/hr3.jpg",
-  "../public/hr4.jpg",
-  "../public/hr5.jpg",
+  "../hr1.jpg",
+  "../hr2.jpg",
+  "../hr3.jpg",
+  "../hr4.jpg",
+  "../hr5.jpg",
 ];
 
 function Home() {
