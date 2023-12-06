@@ -27,7 +27,11 @@ function Checkout() {
           onClose={() => setShowPopup(false)}
         />
       )}
-      {cartItems && (
+      {cartItems && cartItems.length === 0 ? (
+        <div className="cart" style={{ fontWeight: "700" }}>
+          No items in your cart
+        </div>
+      ) : (
         <div className="cart">
           <table>
             <thead>

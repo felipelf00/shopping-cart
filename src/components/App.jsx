@@ -8,6 +8,7 @@ import Shop from "./Shop";
 import Product from "./Product";
 import Checkout from "./Checkout";
 import Thanks from "./Thanks";
+import Footer from "./Footer";
 
 export const ShopContext = createContext({
   products: [],
@@ -69,6 +70,7 @@ function App() {
           </Routes>
         </main>
         {/* <Outlet /> */}
+        <Footer />
       </ShopContext.Provider>
     </>
   );

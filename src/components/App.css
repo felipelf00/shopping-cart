@@ -8,6 +8,21 @@
   --red-dark: rgb(114, 24, 24);
 }
 
+#root,
+body,
+html {
+  min-height: 100vh;
+  /* height: 100%; */
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
@@ -19,12 +34,18 @@ body {
   color: var(--off-black);
   text-align: center;
   position: relative;
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
 }
 
 main {
-  max-width: 1200px;
+  /* max-width: 1200px; */
+  width: min(1200px, 90vw);
   padding: 0 15px;
   margin: auto;
+  height: 100%;
 }
 
 ul {
@@ -33,9 +54,13 @@ ul {
   margin: 0;
 }
 
-header {
+header,
+footer {
   background-color: var(--off-black);
   color: white;
+}
+
+header {
   height: 50px;
   display: flex;
   align-items: center;
@@ -97,6 +122,11 @@ header a {
   position: relative;
   margin-right: 10px;
 }
+
+.cart-icons:hover {
+  color: var(--red);
+}
+
 .cart-counter {
   color: white;
   /* background-color: var(--off-black); */
@@ -424,6 +454,21 @@ nav ul li:not(:last-child) a:hover {
   height: 100%;
   top: 0;
   right: 0;
+}
+
+footer {
+  /* position: absolute;
+  bottom: 0; */
+  margin-top: 69px;
+  padding: 8px;
+}
+
+footer a {
+  color: white;
+  font-weight: 600;
+}
+footer a:hover {
+  color: var(--red);
 }
 
 @media screen and (min-width: 900px) {
