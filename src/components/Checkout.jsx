@@ -13,6 +13,12 @@ function Checkout() {
     setItemToRemove(item);
   };
 
+  let total = 0;
+
+  for (let i = 0; i < cartItems.length; i++) {
+    total = total + cartItems[i].product.price * cartItems[i].quantity;
+  }
+
   return (
     <>
       <h2>Checkout</h2>
@@ -61,6 +67,11 @@ function Checkout() {
                   </td>
                 </tr>
               ))}
+              <tr style={{ fontWeight: "700" }}>
+                <td> </td>
+                <td>Total:</td>
+                <td>${total}</td>
+              </tr>
             </tbody>
           </table>
         </div>
