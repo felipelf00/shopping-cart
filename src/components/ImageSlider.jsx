@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import PropTypes from 'prop-types'
 
 const ImageSlider = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,7 +18,8 @@ const ImageSlider = ({ images }) => {
     const intervalId = setInterval(nextSlide, 6000);
 
     return () => clearInterval(intervalId);
-  }, [currentIndex]); //nextSlide??
+    // eslint-disable-next-line
+  }, [currentIndex]);
 
   return (
     <div
@@ -47,17 +49,15 @@ const ImageSlider = ({ images }) => {
           />
         ))}
       </div>
-
-      {/* <img
-        src={images[currentIndex]}
-        alt={`Slide ${currentIndex + 1}`}
-        className="slide"
-      /> */}
       <button onClick={nextSlide} className="next">
         &gt;
       </button>
     </div>
   );
 };
+
+ImageSlider.propTypes = {
+  images: PropTypes.array,
+}
 
 export default ImageSlider;

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ShopContext } from "./App";
+import PropTypes from 'prop-types'
 
 function Popup({ onClose, type, itemToRemove }) {
   const { removeFromCart } = useContext(ShopContext);
@@ -46,6 +47,12 @@ function Popup({ onClose, type, itemToRemove }) {
       </div>
     </div>
   );
+}
+
+Popup.propTypes = {
+  onClose: PropTypes.func,
+  type: PropTypes.string,
+  itemToRemove: PropTypes.object,
 }
 
 export default Popup;

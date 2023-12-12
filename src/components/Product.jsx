@@ -4,7 +4,6 @@ import { ShopContext } from "./App";
 import { Link } from "react-router-dom";
 import Popup from "./Popup";
 
-//function Product({ products }) {
 function Product() {
   const { id } = useParams();
   const { products, addToCart } = useContext(ShopContext);

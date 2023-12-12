@@ -1,8 +1,7 @@
 import "./App.css";
-import { Link, Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useEffect, useState, createContext } from "react";
 import Header from "./Header";
-import Router from "../Router";
 import Home from "./Home";
 import Shop from "./Shop";
 import Product from "./Product";

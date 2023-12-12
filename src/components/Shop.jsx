@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import ProductCard from "./ProductCard";
 import { ShopContext } from "./App";
 

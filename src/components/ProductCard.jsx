@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'
 
 function ProductCard({ product }) {
   return (
@@ -14,4 +15,7 @@ function ProductCard({ product }) {
   );
 }
 
+ProductCard.propTypes = {
+  product: PropTypes.object,
+}
 export default ProductCard;

@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { ShopContext } from "./App";
 import ImageSlider from "./ImageSlider";
 import { Link } from "react-router-dom";
 
@@ -12,8 +10,6 @@ const images = [
 ];
 
 function Home() {
-  const { products } = useContext(ShopContext); //not used yet
-
   return (
     <>
       <div className="hero">
