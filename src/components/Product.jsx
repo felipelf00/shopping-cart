@@ -16,7 +16,6 @@ function Product() {
   if (index === -1) {
     return <p>Loading product...</p>;
   }
-  console.log("index: " + index);
   const thisProduct = products[index];
 
   const handleQuantityChange = (event) => {
